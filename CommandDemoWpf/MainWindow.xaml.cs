@@ -25,7 +25,7 @@ namespace CommandDemoWpf
             InitializeComponent();
             InitializePlacingMode();
         }
-        enum PlacingShapeMode { Circle, Square, Triangle }
+        enum PlacingShapeMode { Circle, Square, Triangle, Square2 }
         PlacingShapeMode currentPlacingShapeMode; 
         private void InitializePlacingMode()
         {
@@ -159,6 +159,16 @@ namespace CommandDemoWpf
         private void TriangleCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             currentPlacingShapeMode = PlacingShapeMode.Triangle;
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("TODO");
         }
     }
     public static class CustomCommands
